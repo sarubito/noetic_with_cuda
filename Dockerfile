@@ -34,6 +34,7 @@ RUN apt update -y \
     mesa-utils \
     net-tools \
     iputils-ping \
+    python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update -y \
