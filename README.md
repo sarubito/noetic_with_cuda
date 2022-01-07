@@ -8,7 +8,11 @@ If you want change CUDA version, please reference from [nvidia developer](https:
 See below for the version of the container environment<br>
 - CUDA 10.2
 - python 3.8
-- ROS [Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
+- ROS [Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) <br>
+
+Minimum enviroment of host PC<br>
+- docker
+- NVIDIA GPU
 
 ## Enviroment construction
 1. ```cd noetic_with_cuda```
