@@ -14,6 +14,9 @@ Minimum enviroment of host PC<br>
 - docker
 - NVIDIA GPU
 
+When you need CUDA and cuDNN, pull below image <br>
+[dockerhub](https://hub.docker.com/repository/docker/sarubito2020/noetic_cuda_cudnn/general)
+
 ## Enviroment construction
 1. ```cd noetic_with_cuda```
 2. ```bash RUN-BUILD-20_04_IMAGE.sh```
