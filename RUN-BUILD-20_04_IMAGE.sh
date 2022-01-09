@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t sarubito/ubuntu20.04_cuda:latest .
+nvidia-docker build -t sarubito2020/noetic_cuda:latest .
