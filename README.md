@@ -15,7 +15,7 @@ Minimum enviroment of host PC<br>
 - NVIDIA GPU
 
 When you want only pull docker image, access below URL <br>
-[dockerhub](https://hub.docker.com/repository/docker/sarubito2020/noetic_cuda_cudnn/general)
+- [dockerhub page](https://hub.docker.com/repository/docker/sarubito2020/noetic_cuda)
 
 ## Enviroment construction
 1. ```cd noetic_with_cuda```
