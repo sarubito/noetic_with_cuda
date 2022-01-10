@@ -39,4 +39,4 @@ When you pull docker image, pull below image <br>
 8. **`CUDA_VERSION`** : Similar to `NVIDIA_REQUIRE_CUDA`, for legacy CUDA images.
 In addition, if `NVIDIA_REQUIRE_CUDA` is not set, `NVIDIA_VISIBLE_DEVICES` and `NVIDIA_DRIVER_CAPABILITIES` will default to `all`. <br>
 
-About detail of enviroment variables for nvidia-container : (NVIDIA/nvidia-container-runtime)[https://github.com/NVIDIA/nvidia-container-runtime]
+About detail of enviroment variables for nvidia-container : [NVIDIA/nvidia-container-runtime](https://github.com/NVIDIA/nvidia-container-runtime)
