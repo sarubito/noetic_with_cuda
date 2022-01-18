@@ -8,12 +8,6 @@ ARG TZ=Asia/Tokyo
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ ${TZ}
 
-## nvidia-container-runtime
-#ENV NVIDIA_VISIBLE_DEVICES \
-#    ${NVIDIA_VISIBLE_DEVICES:-all}
-#ENV NVIDIA_DRIVER_CAPABILITIES \
-#    ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics, compute, video, utility
-
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV NVIDIA_DRIVER_CAPABILITIES=all
 
@@ -26,7 +20,6 @@ RUN apt update -y \
     x11-apps \
     git \
     vim \
-    cmake \
     build-essential \
     curl \
     ca-certificates \
@@ -37,6 +30,7 @@ RUN apt update -y \
     net-tools \
     iputils-ping \
     python3-pip \
+    python3-tk \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update -y \
@@ -64,6 +58,7 @@ RUN apt update -y \
     ros-${ROS_VERSION}-vision-msgs \
     ros-${ROS_VERSION}-libuvc-camera \
     ros-${ROS_VERSION}-camera-calibration \
+    ros-${ROS_VERSION}-ddynamic-reconfigure \
     ${PYTHON_VERSION}-rosdep \
     ${PYTHON_VERSION}-rosinstall \
     ${PYTHON_VERSION}-rosinstall-generator \
@@ -93,5 +88,18 @@ RUN apt update -y \
     software-properties-common \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip3 install rospkg
+RUN pip3 uninstall -y  pillow
+RUN pip3 install pillow
+RUN pip3 install empy
+
+#WORKDIRはcdのような感じ
+WORKDIR /root/cmake
+RUN wget https://github.com/Kitware/CMake/releases/download/v3.21.4/cmake-3.21.4.tar.gz
+RUN tar -xvf cmake-3.21.4.tar.gz && rm -f cmake-3.21.4.tar.gz
+WORKDIR /root/cmake/cmake-3.21.4
+RUN bash bootstrap && make && make install
+
 ## Setting working directry
+RUN echo "source /opt/ros/${ROS_VERSION}/setup.bash" >> ~/.bashrc
 WORKDIR /root/WORKDIR
