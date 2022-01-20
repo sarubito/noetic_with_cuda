@@ -42,6 +42,8 @@ RUN apt-get update -y \
     libgles2-mesa-dev \
     && rm -rf /var/lib/apt/lists/*
 
+RUN ln -s /usr/bin/python3.8 /usr/bin/python
+
 ENV PATH="/usr/local/${CUDA_VERSION}/bin:${PATH}"
 ENV LD_LIBRARY_PATH="/usr/local/${CUDA_VERSION}/lib64:$LD_LIBRARY_PATH"
 
