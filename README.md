@@ -8,6 +8,7 @@ See below for the version of the container environment<br>
 - CUDA 11.2.0
 - cuDNN 8.1.1.33
 - python 3.8
+- CMake 3.21.4
 - ROS [Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) <br>
 
 Minimum enviroment of host PC<br>
