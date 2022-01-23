@@ -88,6 +88,7 @@ RUN apt update -y \
     && apt upgrade -y \
     && apt install -y --no-install-recommends \
     software-properties-common \
+    libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install rospkg
